@@ -1,0 +1,11 @@
+# Segredos: nunca versionar
+.env
+
+# Gerados em tempo de execução
+saida/
+logs/auditoria-*.jsonl
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

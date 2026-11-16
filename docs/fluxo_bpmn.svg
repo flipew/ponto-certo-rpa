@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" font-family="Helvetica, Arial, sans-serif">
+<rect width="760" height="600" fill="#ffffff"/>
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5f6368"/></marker></defs>
+<text x="24" y="33.0" font-size="15" fill="#1c1e21" font-weight="600" text-anchor="start">Ponto Certo RPA: monitoramento do intervalo das linhas (BPMN)</text>
+<rect x="24" y="262" width="712" height="214" rx="10" fill="#f6f8fb" stroke="#5f6368" stroke-width="1.25"/>
+<text x="40" y="462.0" font-size="12" fill="#1c1e21" font-weight="600" text-anchor="start">↻ Para cada linha monitorada (repetição)</text>
+<path d="M66 100H114" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M246 100H318" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M362 100H424" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M556 100H628" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M340 122V168" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M650 122V190H406" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M274 190H216" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M672 100H722V238H110V308" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M176 330H248" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M292 330H354" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M486 330H558" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M270 352V398" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M336 420H386" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M580 352V398" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M602 330H676" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M646 420H690V344" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M200 476V518" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M295 540H364" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<path d="M496 540H584" fill="none" stroke="#5f6368" stroke-width="1.25" marker-end="url(#seta)"/>
+<circle cx="50" cy="100" r="16" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<circle cx="50" cy="100" r="10" fill="none" stroke="#5f6368" stroke-width="1"/>
+<path d="M50 94V100H55" fill="none" stroke="#5f6368" stroke-width="1.25"/>
+<text x="50" y="137.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="middle">Agendamento</text>
+<rect x="114.0" y="78.0" width="132" height="44" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<text x="180" y="97.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">Carregar e validar</text>
+<text x="180" y="111.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">lista de linhas (CSV)</text>
+<polygon points="318,100 340,78 362,100 340,122" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<path d="M333 93L347 107M347 93L333 107" stroke="#5f6368" stroke-width="1.5"/>
+<text x="340" y="67.8" font-size="11.5" fill="#1c1e21" font-weight="600" text-anchor="middle">Entrada válida?</text>
+<rect x="424.0" y="78.0" width="132" height="44" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<text x="490" y="97.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">Autenticar na</text>
+<text x="490" y="111.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">API Olho Vivo</text>
+<polygon points="628,100 650,78 672,100 650,122" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<path d="M643 93L657 107M657 93L643 107" stroke="#5f6368" stroke-width="1.5"/>
+<text x="650" y="67.8" font-size="11.5" fill="#1c1e21" font-weight="600" text-anchor="middle">Autenticou?</text>
+<text x="392" y="95.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="middle">sim</text>
+<text x="700" y="95.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="middle">sim</text>
+<text x="350" y="149.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="start">não</text>
+<text x="660" y="149.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="start">não</text>
+<rect x="274.0" y="168.0" width="132" height="44" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<text x="340" y="187.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">Registrar erro</text>
+<text x="340" y="201.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">na auditoria</text>
+<circle cx="200" cy="190" r="14" fill="#ffffff" stroke="#b3261e" stroke-width="3.5"/>
+<text x="176" y="186.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="end">Execução abortada</text>
+<text x="176" y="200.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="end">(códigos 2, 3 ou 4)</text>
+<rect x="44.0" y="308.0" width="132" height="44" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<text x="110" y="327.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">Consultar previsão</text>
+<text x="110" y="341.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">(até 3 tentativas)</text>
+<polygon points="248,330 270,308 292,330 270,352" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<path d="M263 323L277 337M277 323L263 337" stroke="#5f6368" stroke-width="1.5"/>
+<text x="270" y="297.8" font-size="11.5" fill="#1c1e21" font-weight="600" text-anchor="middle">Coleta ok?</text>
+<rect x="354.0" y="308.0" width="132" height="44" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<text x="420" y="327.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">Calcular indicador</text>
+<text x="420" y="341.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">e classificar</text>
+<polygon points="558,330 580,308 602,330 580,352" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<path d="M573 323L587 337M587 323L573 337" stroke="#5f6368" stroke-width="1.5"/>
+<text x="580" y="290.8" font-size="11.5" fill="#1c1e21" font-weight="600" text-anchor="middle">Crítico persistente e</text>
+<text x="580" y="304.8" font-size="11.5" fill="#1c1e21" font-weight="600" text-anchor="middle">sem alerta hoje?</text>
+<circle cx="690" cy="330" r="12" fill="#ffffff" stroke="#5f6368" stroke-width="3.5"/>
+<text x="690" y="305.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="middle">Próxima linha</text>
+<text x="322" y="325.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="middle">sim</text>
+<text x="638" y="325.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="middle">não</text>
+<text x="280" y="381.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="start">não</text>
+<text x="590" y="381.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="start">sim</text>
+<rect x="204.0" y="398.0" width="132" height="44" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<text x="270" y="417.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">Registrar</text>
+<text x="270" y="431.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">FALHA_COLETA</text>
+<circle cx="400" cy="420" r="12" fill="#ffffff" stroke="#5f6368" stroke-width="3.5"/>
+<text x="420" y="423.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="start">Próxima linha</text>
+<rect x="514.0" y="398.0" width="132" height="44" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<text x="580" y="417.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">Gerar alerta e texto</text>
+<text x="580" y="431.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">da reclamação</text>
+<rect x="105.0" y="518.0" width="190" height="44" rx="8" fill="#e8eef5" stroke="#12355b" stroke-width="2"/>
+<text x="200" y="537.0" font-size="12" fill="#1c1e21" font-weight="600" text-anchor="middle">Publicar painel para o MVP</text>
+<text x="200" y="551.0" font-size="12" fill="#1c1e21" font-weight="600" text-anchor="middle">(JSON + SQLite)</text>
+<rect x="364.0" y="518.0" width="132" height="44" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.25"/>
+<text x="430" y="537.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">Registrar resumo</text>
+<text x="430" y="551.0" font-size="12" fill="#1c1e21" font-weight="400" text-anchor="middle">na auditoria</text>
+<circle cx="600" cy="540" r="14" fill="#ffffff" stroke="#5f6368" stroke-width="3.5"/>
+<text x="624" y="536.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="start">Execução encerrada</text>
+<text x="624" y="550.8" font-size="11.5" fill="#5f6368" font-weight="400" text-anchor="start">(códigos 0, 1 ou 3)</text>
+</svg>

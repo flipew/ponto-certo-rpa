@@ -1,0 +1,53 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/ponto-certo-rpa
+plugins: platformdirs-4.13.5, anyio-4.15.1
+collecting ... collected 44 items
+
+tests/test_entrada.py::test_linhas_validas PASSED                        [  2%]
+tests/test_entrada.py::test_rejeita_invalidos_e_duplicados_com_motivo PASSED [  4%]
+tests/test_entrada.py::test_arquivo_ausente PASSED                       [  6%]
+tests/test_entrada.py::test_coluna_ausente PASSED                        [  9%]
+tests/test_entrada.py::test_nenhuma_linha_valida PASSED                  [ 11%]
+tests/test_olho_vivo.py::test_autentica_com_post_e_token PASSED          [ 13%]
+tests/test_olho_vivo.py::test_token_recusado PASSED                      [ 15%]
+tests/test_olho_vivo.py::test_token_ausente_nem_chama_a_api PASSED       [ 18%]
+tests/test_olho_vivo.py::test_recupera_apos_falhas_transitorias_com_espera_crescente PASSED [ 20%]
+tests/test_olho_vivo.py::test_desiste_apos_todas_as_tentativas PASSED    [ 22%]
+tests/test_olho_vivo.py::test_corpo_que_nao_e_json PASSED                [ 25%]
+tests/test_olho_vivo.py::test_sessao_expirada_reautentica_uma_vez PASSED [ 27%]
+tests/test_olho_vivo.py::test_mensagens_de_erro_nunca_carregam_o_token PASSED [ 29%]
+tests/test_regras.py::test_classificacao_por_faixa[chegadas0-6-NORMAL-5] PASSED [ 31%]
+tests/test_regras.py::test_classificacao_por_faixa[chegadas1-6-NORMAL-7] PASSED [ 34%]
+tests/test_regras.py::test_classificacao_por_faixa[chegadas2-8-ATENCAO-11] PASSED [ 36%]
+tests/test_regras.py::test_classificacao_por_faixa[chegadas3-6-ATENCAO-12] PASSED [ 38%]
+tests/test_regras.py::test_classificacao_por_faixa[chegadas4-10-CRITICO-27] PASSED [ 40%]
+tests/test_regras.py::test_sem_onibus_previsto_e_tratado_como_critico PASSED [ 43%]
+tests/test_regras.py::test_limites_sao_configuraveis PASSED              [ 45%]
+tests/test_regras.py::test_interpreta_horarios_em_minutos PASSED         [ 47%]
+tests/test_regras.py::test_virada_da_meia_noite PASSED                   [ 50%]
+tests/test_regras.py::test_previsao_ja_vencida_conta_como_chegando PASSED [ 52%]
+tests/test_regras.py::test_parada_sem_previsao_devolve_lista_vazia PASSED [ 54%]
+tests/test_regras.py::test_ignora_outras_linhas_da_mesma_parada PASSED   [ 56%]
+tests/test_regras.py::test_resposta_fora_do_formato_gera_erro_tipado[None] PASSED [ 59%]
+tests/test_regras.py::test_resposta_fora_do_formato_gera_erro_tipado[ruim1] PASSED [ 61%]
+tests/test_regras.py::test_resposta_fora_do_formato_gera_erro_tipado[ruim2] PASSED [ 63%]
+tests/test_regras.py::test_resposta_fora_do_formato_gera_erro_tipado[ruim3] PASSED [ 65%]
+tests/test_regras.py::test_resposta_fora_do_formato_gera_erro_tipado[ruim4] PASSED [ 68%]
+tests/test_regras.py::test_resposta_fora_do_formato_gera_erro_tipado[ruim5] PASSED [ 70%]
+tests/test_regras.py::test_resposta_fora_do_formato_gera_erro_tipado[ruim6] PASSED [ 72%]
+tests/test_robo.py::test_sucesso_processa_todas_e_entrega_ao_mvp PASSED  [ 75%]
+tests/test_robo.py::test_decisao_alerta_so_com_critico_persistente_e_sem_duplicar PASSED [ 77%]
+tests/test_robo.py::test_decisao_medicao_normal_interrompe_a_sequencia PASSED [ 79%]
+tests/test_robo.py::test_decisao_sem_onibus_previsto_tambem_alerta PASSED [ 81%]
+tests/test_robo.py::test_falha_em_uma_linha_nao_interrompe_as_demais PASSED [ 84%]
+tests/test_robo.py::test_falha_total_devolve_codigo_3 PASSED             [ 86%]
+tests/test_robo.py::test_falha_de_autenticacao_aborta_com_codigo_2 PASSED [ 88%]
+tests/test_robo.py::test_fonte_fora_do_ar_no_login_aborta_com_codigo_3 PASSED [ 90%]
+tests/test_robo.py::test_arquivo_de_linhas_ausente_aborta_com_codigo_4 PASSED [ 93%]
+tests/test_robo.py::test_registros_invalidos_e_duplicados_sao_auditados PASSED [ 95%]
+tests/test_robo.py::test_erro_inesperado_e_registrado_e_devolve_codigo_5 PASSED [ 97%]
+tests/test_robo.py::test_logs_nao_expoem_segredos PASSED                 [100%]
+
+============================== 44 passed in 0.26s ==============================

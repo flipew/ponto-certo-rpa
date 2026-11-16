@@ -1,0 +1,26 @@
+# Consulta na API real os códigos de uma linha e das suas paradas.
+# Uso: aba Actions > Descobrir códigos > Run workflow > informe o letreiro (ex.: 8000).
+name: Descobrir códigos
+
+on:
+  workflow_dispatch:
+    inputs:
+      linha:
+        description: "Letreiro ou termo de busca (ex.: 8000)"
+        required: true
+
+jobs:
+  descobrir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Consultar a API Olho Vivo
+        env:
+          OLHO_VIVO_TOKEN: ${{ secrets.OLHO_VIVO_TOKEN }}
+          LINHA: ${{ inputs.linha }}
+        run: python rpa.py descobrir --linha "$LINHA"

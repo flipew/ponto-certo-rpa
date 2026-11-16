@@ -1,0 +1,88 @@
+# Roda o robô sem intervenção humana e publica o painel do MVP no GitHub Pages.
+#
+# Modo real: cadastre o token em Settings > Secrets and variables > Actions,
+# com o nome OLHO_VIVO_TOKEN. Sem o segredo, o robô roda em modo simulado.
+name: Monitorar linhas
+
+on:
+  schedule:
+    - cron: "*/10 8-23,0-2 * * *" # a cada 10 min, das 5h às 23h de Brasília (o cron é em UTC)
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitorar
+  cancel-in-progress: false
+
+jobs:
+  robo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Testes automatizados
+        run: python -m pytest -q
+
+      - name: Recuperar o histórico da execução anterior
+        run: |
+          mkdir -p saida
+          if git fetch --depth=1 origin gh-pages 2>/dev/null; then
+            git show FETCH_HEAD:dados/ponto_certo.db > saida/ponto_certo.db || rm -f saida/ponto_certo.db
+          fi
+
+      - name: Executar o robô
+        env:
+          OLHO_VIVO_TOKEN: ${{ secrets.OLHO_VIVO_TOKEN }}
+        run: |
+          if [ -n "$OLHO_VIVO_TOKEN" ]; then MODO=real; else MODO=simulado; fi
+          echo "Modo: $MODO"
+          set +e
+          python rpa.py executar --modo "$MODO"
+          CODIGO=$?
+          set -e
+          echo "CODIGO=$CODIGO" >> "$GITHUB_ENV"
+
+      - name: Guardar o log de auditoria
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-${{ github.run_number }}
+          path: logs/auditoria-*.jsonl
+          if-no-files-found: ignore
+
+      - name: Publicar o painel no GitHub Pages
+        run: |
+          if [ ! -f saida/painel_linhas.json ]; then
+            echo "Sem painel novo nesta execução: a publicação anterior é mantida."
+            exit 0
+          fi
+          mkdir -p site/dados
+          cp mvp/index.html saida/painel_linhas.json site/
+          cp saida/ponto_certo.db site/dados/
+          touch site/.nojekyll
+          cd site
+          git init -q -b gh-pages
+          git config user.name "ponto-certo-rpa"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "painel: execução ${GITHUB_RUN_NUMBER}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+
+      - name: Sinalizar execução abortada
+        # 0 = concluída, 1 = concluída com falha parcial (já registrada no log e no painel)
+        if: env.CODIGO != '0' && env.CODIGO != '1'
+        run: |
+          echo "::error::O robô encerrou com código ${CODIGO}. Veja o log de auditoria."
+          exit 1

@@ -1,0 +1,10 @@
+{
+  "descricao": "Cenário de demonstração. Chave = codigo_linha. chegadas_min = minutos até cada ônibus previsto. erro = falha a simular (indisponivel ou resposta_invalida).",
+  "linhas": {
+    "1273": {"chegadas_min": [3, 8]},
+    "2506": {"chegadas_min": [11, 19]},
+    "33715": {"chegadas_min": [24, 51]},
+    "1877": {"erro": "indisponivel"},
+    "34041": {"chegadas_min": []}
+  }
+}

@@ -1,0 +1,12 @@
+### Token ausente no modo real
+20:04:08 [INFO ] EXECUCAO_INICIADA modo=real arquivo_linhas=linhas_monitoradas.csv
+20:04:08 [INFO ] ENTRADA_CARREGADA validas=5 rejeitadas=0 fonte=api_olho_vivo
+20:04:08 [ERRO ] FALHA_AUTENTICACAO motivo=Token ausente: defina OLHO_VIVO_TOKEN no ambiente ou no .env
+20:04:08 [ERRO ] EXECUCAO_ENCERRADA status=ABORTADA_AUTENTICACAO codigo_saida=2 linhas_lidas=5 rejeitadas=0 processadas=0 falhas=0 alertas=0
+código de saída: 2
+
+### Arquivo de linhas ausente
+20:04:08 [INFO ] EXECUCAO_INICIADA modo=simulado arquivo_linhas=nao_existe.csv
+20:04:08 [ERRO ] CONFIGURACAO_INVALIDA motivo=Arquivo de linhas não encontrado: nao_existe.csv
+20:04:08 [ERRO ] EXECUCAO_ENCERRADA status=ABORTADA_CONFIGURACAO codigo_saida=4 linhas_lidas=0 rejeitadas=0 processadas=0 falhas=0 alertas=0
+código de saída: 4
