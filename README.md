@@ -4,7 +4,6 @@ Automação que monitora o intervalo dos ônibus municipais de São Paulo e entr
 **Ponto Certo** a situação de cada linha, com alerta e texto de reclamação quando o atraso persiste.
 
 Global Solution 2026.2 · FIAP · Engenharia de Software 4ES · Robotic Process Automation
-Atividade: *Do Processo Manual à Automação Inteligente*
 
 ## Integrantes
 
