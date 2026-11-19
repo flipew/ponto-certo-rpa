@@ -16,7 +16,8 @@ Atividade: *Do Processo Manual à Automação Inteligente*
 
 ## Links
 
-
+- Vídeo de demonstração: https://youtu.be/hc0wqeQG_ac
+- Relatório técnico (PDF): [docs/Relatorio_Tecnico_RPA_Ponto_Certo.pdf](docs/Relatorio_Tecnico_RPA_Ponto_Certo.pdf)
 - MVP Ponto Certo (GitHub Pages): https://flipew.github.io/ponto-certo-rpa/
 - Dados para o MVP (JSON): https://flipew.github.io/ponto-certo-rpa/painel_linhas.json
 
