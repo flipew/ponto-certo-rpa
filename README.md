@@ -18,7 +18,8 @@ Atividade: *Do Processo Manual à Automação Inteligente*
 
 - Vídeo de demonstração (até 3 min): [preencher]
 - Relatório técnico (PDF): [preencher]
-- MVP Ponto Certo (GitHub Pages): [preencher: https://USUARIO.github.io/ponto-certo-rpa/]
+- MVP Ponto Certo (GitHub Pages): https://flipew.github.io/ponto-certo-rpa/
+- Dados para o MVP (JSON): https://flipew.github.io/ponto-certo-rpa/painel_linhas.json
 
 ## O problema
 
