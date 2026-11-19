@@ -10,11 +10,9 @@ Atividade: *Do Processo Manual à Automação Inteligente*
 
 | Nome completo | RM |
 | --- | --- |
-| Filipe Menezes | 98765 |
-| [preencher] | [preencher] |
-| [preencher] | [preencher] |
-| [preencher] | [preencher] |
-| [preencher] | [preencher] |
+| Filipe Prado Menezes | 98765 |
+| Cássio Eid Kobaysahi Yonetsuka | 99678 |
+| Pedro Henrique Salvitti Habiro | 88166 |
 
 ## Links
 
