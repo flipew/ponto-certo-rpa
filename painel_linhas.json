@@ -1,0 +1,107 @@
+{
+  "gerado_em": "2026-11-21T12:54:13-03:00",
+  "execucao_id": "20261121-125413-3d5d26",
+  "modo": "simulado",
+  "fonte": "simulado",
+  "status_execucao": "CONCLUIDA_COM_FALHAS",
+  "resumo": {
+    "linhas_monitoradas": 5,
+    "normal": 1,
+    "atencao": 1,
+    "critico": 1,
+    "sem_previsao": 1,
+    "falha_coleta": 1
+  },
+  "linhas": [
+    {
+      "linha": "8000-10",
+      "codigo_linha": 1273,
+      "codigo_parada": 4200953,
+      "nome_parada": "TERMINAL LAPA",
+      "intervalo_programado_min": 6.0,
+      "espera_min": 3,
+      "intervalo_observado_min": 5,
+      "indicador_min": 5,
+      "razao": 0.83,
+      "classificacao": "NORMAL",
+      "detalhe": null,
+      "coletado_em": "2026-11-21T12:54:13-03:00"
+    },
+    {
+      "linha": "175T-10",
+      "codigo_linha": 2506,
+      "codigo_parada": 340015674,
+      "nome_parada": "METRO SANTANA",
+      "intervalo_programado_min": 8.0,
+      "espera_min": 11,
+      "intervalo_observado_min": 8,
+      "indicador_min": 11,
+      "razao": 1.38,
+      "classificacao": "ATENCAO",
+      "detalhe": null,
+      "coletado_em": "2026-11-21T12:54:13-03:00"
+    },
+    {
+      "linha": "971D-10",
+      "codigo_linha": 33715,
+      "codigo_parada": 630012906,
+      "nome_parada": "AV. IMIRIM",
+      "intervalo_programado_min": 10.0,
+      "espera_min": 24,
+      "intervalo_observado_min": 27,
+      "indicador_min": 27,
+      "razao": 2.7,
+      "classificacao": "CRITICO",
+      "detalhe": null,
+      "coletado_em": "2026-11-21T12:54:13-03:00"
+    },
+    {
+      "linha": "576M-10",
+      "codigo_linha": 1877,
+      "codigo_parada": 7014417,
+      "nome_parada": "VILA CLARA",
+      "intervalo_programado_min": 12.0,
+      "espera_min": null,
+      "intervalo_observado_min": null,
+      "indicador_min": null,
+      "razao": null,
+      "classificacao": "FALHA_COLETA",
+      "detalhe": "ErroApiIndisponivel: /Previsao: sem resposta após 3 tentativas (simulado)",
+      "coletado_em": "2026-11-21T12:54:13-03:00"
+    },
+    {
+      "linha": "6913-10",
+      "codigo_linha": 34041,
+      "codigo_parada": 920016611,
+      "nome_parada": "TERM. VARGINHA",
+      "intervalo_programado_min": 9.0,
+      "espera_min": null,
+      "intervalo_observado_min": null,
+      "indicador_min": null,
+      "razao": null,
+      "classificacao": "SEM_PREVISAO",
+      "detalhe": null,
+      "coletado_em": "2026-11-21T12:54:13-03:00"
+    }
+  ],
+  "alertas_do_dia": [
+    {
+      "criado_em": "2026-11-21T00:44:41-03:00",
+      "linha": "6913-10",
+      "codigo_parada": 920016611,
+      "nome_parada": "TERM. VARGINHA",
+      "tipo": "SEM_PREVISAO",
+      "mensagem": "Linha 6913-10: nenhum ônibus previsto em TERM. VARGINHA",
+      "reclamacao": "Assunto: intervalo excessivo entre ônibus.\nLinha: 6913-10. Parada: TERM. VARGINHA (código 920016611).\nData e hora da verificação: 21/11/2026 às 00:44.\nIntervalo programado: 9 min.\nOcorrência: não havia nenhum ônibus previsto para a parada, em 2 verificações consecutivas.\nSolicitação: verificar o cumprimento das viagens programadas da linha.\nFonte dos dados: API Olho Vivo (SPTrans), coleta automatizada Ponto Certo."
+    },
+    {
+      "criado_em": "2026-11-21T00:44:40-03:00",
+      "linha": "971D-10",
+      "codigo_parada": 630012906,
+      "nome_parada": "AV. IMIRIM",
+      "tipo": "CRITICO",
+      "mensagem": "Linha 971D-10: 27 min de intervalo em AV. IMIRIM (programado: 10 min)",
+      "reclamacao": "Assunto: intervalo excessivo entre ônibus.\nLinha: 971D-10. Parada: AV. IMIRIM (código 630012906).\nData e hora da verificação: 21/11/2026 às 00:44.\nIntervalo programado: 10 min.\nOcorrência: o intervalo observado foi de 27 min, 2,7 vezes o programado, em 2 verificações consecutivas.\nSolicitação: verificar o cumprimento das viagens programadas da linha.\nFonte dos dados: API Olho Vivo (SPTrans), coleta automatizada Ponto Certo."
+    }
+  ]
+}
