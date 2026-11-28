@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ponto Certo: situação das linhas</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; background: #f4f5f7; color: #1c1e21; }
+  header { background: #12355b; color: #fff; padding: 16px 24px; }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; font-size: 13px; opacity: .85; }
+  main { max-width: 960px; margin: 0 auto; padding: 24px; }
+  .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .cartao { background: #fff; border-radius: 8px; padding: 16px; border-left: 6px solid #9aa0a6; }
+  .cartao h2 { margin: 0 0 4px; font-size: 18px; }
+  .cartao small { color: #5f6368; }
+  .cartao .valor { font-size: 28px; font-weight: 700; margin: 8px 0 0; }
+  .NORMAL { border-color: #1e8e3e; } .ATENCAO { border-color: #f9ab00; }
+  .CRITICO, .SEM_PREVISAO { border-color: #d93025; } .FALHA_COLETA { border-color: #9aa0a6; }
+  .selo { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #e8eaed; }
+  section h3 { margin: 32px 0 8px; }
+  pre { background: #fff; padding: 12px; border-radius: 8px; white-space: pre-wrap; font-size: 13px; }
+  #erro { color: #d93025; font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ponto Certo: situação das linhas</h1>
+  <p id="meta">carregando...</p>
+</header>
+<main>
+  <p id="erro" role="alert"></p>
+  <div class="grade" id="linhas" aria-live="polite"></div>
+  <section>
+    <h3>Alertas de hoje</h3>
+    <div id="alertas"><p>Nenhum alerta.</p></div>
+  </section>
+</main>
+<script>
+const ROTULOS = { NORMAL: "Normal", ATENCAO: "Atenção", CRITICO: "Crítico",
+                  SEM_PREVISAO: "Sem ônibus previsto", FALHA_COLETA: "Sem dados agora" };
+function el(tag, texto, classe) {
+  const e = document.createElement(tag);
+  if (texto !== undefined) e.textContent = texto;
+  if (classe) e.className = classe;
+  return e;
+}
+async function atualizar() {
+  const erro = document.getElementById("erro");
+  try {
+    // Mesmo arquivo nos dois ambientes: API local (rpa.py servir) e GitHub Pages.
+    const resp = await fetch("painel_linhas.json?t=" + Date.now(), { cache: "no-store" });
+    const painel = await resp.json();
+    if (!resp.ok) throw new Error(painel.erro || "falha ao consultar o painel");
+    erro.textContent = "";
+    document.getElementById("meta").textContent =
+      `Atualizado em ${new Date(painel.gerado_em).toLocaleString("pt-BR")} · fonte: ${painel.fonte} · execução ${painel.execucao_id}`;
+    const grade = document.getElementById("linhas");
+    grade.replaceChildren(...painel.linhas.map(l => {
+      const c = el("article", undefined, "cartao " + l.classificacao);
+      c.append(el("h2", l.linha), el("small", l.nome_parada));
+      c.append(el("p", l.indicador_min == null ? "—" : l.indicador_min + " min", "valor"));
+      c.append(el("small", `programado: ${l.intervalo_programado_min} min`));
+      c.append(document.createElement("br"), el("span", ROTULOS[l.classificacao] || l.classificacao, "selo"));
+      return c;
+    }));
+    const alertas = document.getElementById("alertas");
+    alertas.replaceChildren(...(painel.alertas_do_dia.length
+      ? painel.alertas_do_dia.map(a => el("pre", a.mensagem + "\n\n" + a.reclamacao))
+      : [el("p", "Nenhum alerta.")]));
+  } catch (e) {
+    erro.textContent = "Não foi possível carregar os dados: " + e.message;
+  }
+}
+atualizar();
+setInterval(atualizar, 60000);
+</script>
+</body>
+</html>
